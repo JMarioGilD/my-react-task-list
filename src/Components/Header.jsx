@@ -1,7 +1,7 @@
 function Header() {
     return (
         <div>
-            <h1>Lista de tareas de la semana</h1>
+            <h2>Lista de tareas de la semana</h2>
         </div>
     )
 }
