@@ -1,15 +1,28 @@
+import React from "react"
+import { useState } from "react";
 
-function Task(props) {
-   const { name } = props
+export default function Task({ taskName}) {
+   
+   const[completado, setCompletada] = useState(false);
+   const estaCompletada = () => {
+      setCompletada(!completado)
+   }
+   
+      return ( 
+         // Utilizando un valor Booleano y un checkbox se podra indicar que una tarea o varias tareas han sido completadas
+      <div>
+       <li className={completado ? "item-tarea-completada" : "item-tarea"}>
+        <input
+        type="checkbox"
+        id="chequeo"
+        checked={completado}
+        onChange={estaCompletada}
+        /> 
 
-   return (
-        <li>
-           <article>
-             <h3> { name } </h3>
-             <input type = "checkbox"/>
-           </article>
-        </li>
-   )
-};
-
-export default Task
+        <label className="etiqueta">{taskName}</label>
+        <button className="boton"><i className="fas fa-edit"></i></button>
+        <button className="boton"><i className="fas fa-trash"></i></button>
+       </li>  
+    </div>
+  );
+}

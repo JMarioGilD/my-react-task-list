@@ -8,42 +8,54 @@
 }
 
 body {
-  background: #4a5ba7;
+  background: #e6e9f6;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .App {
   background: #1A1A40;
   margin-top: 5rem;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 5px;
+  border: 2px solid #535BF2;
 }
 
-h2 {
+.item-tarea-completada {
+  text-decoration: line-through;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
+}
+
+li{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #8758ff;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 1px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+h1 {
   color: #fff;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
 }
 
-ul {
-  border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 300px;
-  color: #fff;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.boton {
   background: #8758ff;
   color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  border: none;
+  padding: 0.55rem;
   cursor: pointer;
+}
+
+.registro-tareas{
+  padding: 10px;
 }
 
 .tarea-input {
@@ -57,14 +69,12 @@ li {
   color: #fff;
 }
 
-.tarea-input::placeholder {
-  color: #ffffff4d;
+.registro-tareas::placeholder {
+  color: #1A1A40;
 }
 
-.tarea-btn {
-  background: #8758ff;
-  color: #fff;
-  border: none;
-  padding: 0.55rem;
-  cursor: pointer;
+#agrega{
+  height: 25px;
+  width: 60%;
+  margin: 20px;
 }
