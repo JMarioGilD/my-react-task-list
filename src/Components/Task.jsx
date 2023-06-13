@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react";
 
-export default function Task({ taskName}) {
+export default function Task({ taskName }) {
    
    const[completado, setCompletada] = useState(false);
    const estaCompletada = () => {
@@ -20,8 +20,12 @@ export default function Task({ taskName}) {
         /> 
 
         <label className="etiqueta">{taskName}</label>
-        <button className="boton"><i className="fas fa-edit"></i></button>
-        <button className="boton"><i className="fas fa-trash"></i></button>
+            <button className="boton">
+               <i className="fas fa-edit"></i>
+            </button>
+            <button className="boton">
+               <i className="fas fa-trash"></i>
+            </button>
        </li>  
     </div>
   );

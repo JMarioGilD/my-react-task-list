@@ -1,7 +1,6 @@
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 import React from "react";
 import Task from "./Task";
-import { useEffect } from "react";
 
 
 function TaskList(props) { 
@@ -16,7 +15,7 @@ function TaskList(props) {
 
    const agregarElemento = () => {
      
-       if(agregar !== "" && agregar !== " " && agregar !== "  "){
+       if(agregar.trim() !== ""){
        // agregar al array de lista de tarea.
        setIncreaserID(increaserId + 1);
        let propiedadesElemento = {id: increaserId, task: agregar}
@@ -24,8 +23,8 @@ function TaskList(props) {
        setListaNueva([...listaNueva, propiedadesElemento])
        console.log(listaNueva)
        setAgregar(""); //borra la casilla despues de agregar tarea
-       }else{
-       alert("por favor escribe una tarea")
+       } else {
+       alert("por favor escribe una tarea.")
       }
       }
       
@@ -49,17 +48,17 @@ function TaskList(props) {
       id="agrega"
       type="text"
       className="tarea-input"
-      placeholder="Cual es tú siguiente tarea?"
+      placeholder="¿Cual es tú siguiente tarea?"
       value={agregar}
-      onChange={(event) => {
-      setAgregar(event.target.value)
-      }}
+      onChange={(event) => setAgregar(event.target.value)}
       />
-      <button 
-      onClick={agregarElemento} 
-      className="boton"><i className="fas fa-plus"></i></button>
+        <button onClick={agregarElemento} className="boton">
+         <i className="fas fa-plus"></i>
+        </button>
       <ul>
-        {listaNueva && listaNueva.map(elemento =>(<Task taskName={elemento.task} key={elemento.id} onchecked={listaNueva} />))}
+        {listaNueva.map(elemento =>(
+          <Task taskName={elemento.task} key={elemento.id} />
+        ))}
       </ul>
     </div>
     );
