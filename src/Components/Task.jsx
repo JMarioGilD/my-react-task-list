@@ -1,32 +1,47 @@
-import React from "react"
-import { useState } from "react";
+import React, { useRef, useState } from "react";
+import useForm from "../Hooks/useForm";
 
-export default function Task({ taskName }) {
+export default function Task({ todo, handleUpdateTodo }) {
    
-   const[completado, setCompletada] = useState(false);
-   const estaCompletada = () => {
-      setCompletada(!completado)
-   }
+   const { updateDescription, onInputChange } = useForm({
+      updateDescription: todo.description,
+   });
+
+   const [disabled, setDisabled] = useState(true);
+   const focusInputRef = useRef();
+
+   const onSubmitUpdate = (event) => {
+      event.preventDefault();
+
+      const id = todo.id;
+      const description = updateDescription;
+
+      handleUpdateTodo(id, description);
+
+      setDisabled(!disabled);
+
+      focusInputRef.current.focus();
+
+   };
    
       return ( 
          // Utilizando un valor Booleano y un checkbox se podra indicar que una tarea o varias tareas han sido completadas
-      <div>
-       <li className={completado ? "item-tarea-completada" : "item-tarea"}>
-        <input
-        type="checkbox"
-        id="chequeo"
-        checked={completado}
-        onChange={estaCompletada}
-        /> 
-
-        <label className="etiqueta">{taskName}</label>
-            <button className="boton">
+      <form onSubmit={onSubmitUpdate}>
+      <input
+				type="text"
+				className={`input-update ${
+					todo.done ? 'text-decoration-dashed' : ''
+				}`}
+				name='updateDescription'
+				value={updateDescription}
+				onChange={onInputChange}
+				placeholder='¿Qué hay que hacer?'
+				readOnly={disabled}
+				ref={focusInputRef}
+		/>
+            <button className="boton" type='submit'>
                <i className="fas fa-edit"></i>
-            </button>
-            <button className="boton">
-               <i className="fas fa-trash"></i>
-            </button>
-       </li>  
-    </div>
-  );
-}
+            </button> 
+    </form>
+    );
+   };

@@ -22,10 +22,50 @@ body {
   border: 2px solid #535BF2;
 }
 
-.item-tarea-completada {
-  text-decoration: line-through;
-  text-decoration-color: blue;
-  text-decoration-thickness: 2px;
+.counter-todos {
+	margin: 40px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+.counter-todos h3 {
+  color: #fff;
+	font-weight: 500;
+}
+
+.counter-todos span {
+	color: #535BF2;
+	font-weight: 700;
+	font-size: 24px;
+	margin-left: 10px;
+}
+
+ul {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+ul li {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+ul li span {
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+ul li form {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
 }
 
 li{
@@ -38,6 +78,54 @@ li{
   border-radius: 1px;
   margin-bottom: 1rem;
   cursor: pointer;
+}
+
+.input-update {
+	border: 1px solid #8758ff;
+	font-weight: 500;
+	font-family: inherit;
+	font-size: 18px;
+	color: #fff;
+	width: 100%;
+  outline: none;
+  background: none;
+	/* background-color: #000; */
+}
+
+.add-tarea h3 {
+  color: #fff;
+	font-weight: 500;
+}
+
+.input-Agregar {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 400px;
+  color: #fff;
+}
+
+.container-done {
+	background-color: #535BF2;
+	width: 24px;
+	height: 24px;
+	border-radius: 20px;
+	border: 2px;
+	cursor: pointer;
+}
+
+.text-decoration-dashed {
+	text-decoration: line-through;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
+}
+
+form {
+	display: flex;
+  gap: 10px;
 }
 
 h1 {
@@ -54,23 +142,8 @@ h1 {
   cursor: pointer;
 }
 
-.registro-tareas{
-  padding: 10px;
-}
-
-.tarea-input {
-  outline: none;
-  background: none;
-  border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 300px;
-  color: #fff;
-}
-
-.registro-tareas::placeholder {
-  color: #1A1A40;
+.boton:hover{
+  background-color: #535BF2;
 }
 
 #agrega{
