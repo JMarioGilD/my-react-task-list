@@ -18,13 +18,18 @@ export default function App() {
 
   return (
     <div className='App'>
-      
+
+      {/* Encabezado */}
        <Header />
 
        <div className='counter-todos'>
+
+        {/* Contador de todas las tareas */}
         <h3>
           N° Tareas: <span>{todosCount}</span>
         </h3>
+
+        {/* Contador de tareas pendientes */}
         <h3>
           N° Pendientes: <span>{pendingTodosCount}</span>
         </h3>
@@ -32,9 +37,11 @@ export default function App() {
 
        <div className='add-tarea'>
         <h3>Agregar Tarea</h3>
+        {/* Componente para agregar una nueva tarea */}
         <TodoAdd handleNewTodo={handleNewTodo} />
        </div>
 
+       {/* Lista de tareas */}
        <TaskList 
        todos={todos}
        handleUpdateTodo={handleUpdateTodo}

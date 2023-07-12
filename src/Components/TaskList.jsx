@@ -11,6 +11,7 @@ export default function TaskList({
 
     return (
       <ul>
+        {/* Mapeo de la lista de tareas para generar los elementos de TodoItem */}
       {todos.map(todo =>(
         <TodoItem
         key={todo.id}

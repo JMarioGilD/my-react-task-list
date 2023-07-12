@@ -1,31 +1,30 @@
+/* Estilos generales */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos del cuerpo */
 body {
   background: #e6e9f6;
+  background: linear-gradient(120deg, #360033, #0b8793);
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
+/* Estilos de la aplicación */
 .App {
   background: #1A1A40;
-  margin-top: 5rem;
   padding: 3rem;
   border-radius: 5px;
   border: 2px solid #535BF2;
 }
 
+/* Estilos del contador */
 .counter-todos {
-	margin: 40px 0;
+	margin-bottom: 40px;
 	display: flex;
 	justify-content: space-around;
+  align-items: center;
 }
 
 .counter-todos h3 {
@@ -37,11 +36,11 @@ body {
 	color: #535BF2;
 	font-weight: 700;
 	font-size: 24px;
-	margin-left: 10px;
+	/* margin-left: 10px; */
 }
 
+/* Estilos de lista de tareas */
 ul {
-	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -53,6 +52,9 @@ ul li {
 	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 1px;
+  cursor: pointer;
 }
 
 ul li span {
@@ -68,6 +70,7 @@ ul li form {
 	justify-content: space-between;
 }
 
+/* Estilos del elemento de la lista de tareas */
 li{
   display: flex;
   justify-content: space-around;
@@ -80,41 +83,49 @@ li{
   cursor: pointer;
 }
 
-.input-update {
-	border: 1px solid #8758ff;
-	font-weight: 500;
-	font-family: inherit;
-	font-size: 18px;
-	color: #fff;
-	width: 100%;
+/* Estilos de los campos de entrada */
+.input-update,
+.input-updatedescription,
+.input-Agregar,
+.input-Detalles {
+  border: 1px solid #8758ff;
+  font-weight: 300;
+  font-family: inherit;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
   outline: none;
   background: none;
-	/* background-color: #000; */
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
 }
 
+.input-check {
+  width: 2%;
+  height: 3%;
+  position: absolute;
+  opacity: 1;
+}
+
+.input-update::placeholder,
+.input-updatedescription::placeholder,
+.input-Agregar::placeholder,
+.input-Detalles::placeholder {
+  color: #948e99;
+}
+
+/* Estilos del encabezado "Agregar Tarea" */
 .add-tarea h3 {
   color: #fff;
 	font-weight: 500;
+  display: flex;
+  flex-direction: column;
 }
 
-.input-Agregar {
-  outline: none;
-  background: none;
-  border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 400px;
-  color: #fff;
-}
-
-.container-done {
-	background-color: #535BF2;
-	width: 24px;
-	height: 24px;
-	border-radius: 20px;
-	border: 2px;
-	cursor: pointer;
+/* Estilos del mensaje de error */
+.error-message{
+  color: #673ab7;
+  margin-top: 0.5rem;
 }
 
 .text-decoration-dashed {
@@ -123,10 +134,10 @@ li{
   text-decoration-thickness: 2px;
 }
 
-form {
+/* form {
 	display: flex;
   gap: 10px;
-}
+} */
 
 h1 {
   color: #fff;
@@ -134,11 +145,13 @@ h1 {
   font-size: 1.75rem;
 }
 
+/* Estilos para el botón */
 .boton {
   background: #8758ff;
   color: #fff;
   border: none;
   padding: 0.55rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
 
