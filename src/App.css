@@ -1,42 +1,166 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Estilos del cuerpo */
+body {
+  background: #e6e9f6;
+  background: linear-gradient(120deg, #360033, #0b8793);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Estilos de la aplicación */
+.App {
+  background: #1A1A40;
+  padding: 3rem;
+  border-radius: 5px;
+  border: 2px solid #535BF2;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos del contador */
+.counter-todos {
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-around;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.counter-todos h3 {
+  color: #fff;
+	font-weight: 500;
 }
 
-.card {
-  padding: 2em;
+.counter-todos span {
+	color: #535BF2;
+	font-weight: 700;
+	font-size: 24px;
+	/* margin-left: 10px; */
 }
 
-.read-the-docs {
-  color: #888;
+/* Estilos de lista de tareas */
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+ul li {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+ul li span {
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+ul li form {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Estilos del elemento de la lista de tareas */
+li{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #8758ff;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 1px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* Estilos de los campos de entrada */
+.input-update,
+.input-updatedescription,
+.input-Agregar,
+.input-Detalles {
+  border: 1px solid #8758ff;
+  font-weight: 300;
+  font-family: inherit;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.input-check {
+  width: 2%;
+  height: 3%;
+  position: absolute;
+  opacity: 1;
+}
+
+.input-update::placeholder,
+.input-updatedescription::placeholder,
+.input-Agregar::placeholder,
+.input-Detalles::placeholder {
+  color: #948e99;
+}
+
+/* Estilos del encabezado "Agregar Tarea" */
+.add-tarea h3 {
+  color: #fff;
+	font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos del mensaje de error */
+.error-message{
+  color: #673ab7;
+  margin-top: 0.5rem;
+}
+
+.text-decoration-dashed {
+	text-decoration: line-through;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
+}
+
+/* form {
+	display: flex;
+  gap: 10px;
+} */
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+/* Estilos para el botón */
+.boton {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.boton:hover{
+  background-color: #535BF2;
+}
+
+#agrega{
+  height: 25px;
+  width: 60%;
+  margin: 20px;
 }
