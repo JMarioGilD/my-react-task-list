@@ -8,15 +8,25 @@ export default function TodoAdd ({ handleNewTodo }) {
     descriptionTask: '',
 	});
 
+  // Estado local para controlar si la descripción está vacía.
+  const [isEmpty, setIsEmpty] = useState(false);
+
   // Estado local para controlar si la tarea es demasiado corta.
   const [isTooShort, setIsTooShort] = useState(false);
   
   // función para manejar el envío del formulario.
   const onFormSubmit = (event) => {
 		event.preventDefault();
+
+    if (description.trim().length === 0) {
+      setIsEmpty(true);
+      setIsTooShort(false); // Resetear el otro mensaje de error si estaba activo.
+      return;
+    }
   
     if (description.length < 3) {
       setIsTooShort(true);
+      setIsEmpty(false); // Resetear el otro mensaje de error si estaba activo.
       return;
     }
 
@@ -34,8 +44,9 @@ export default function TodoAdd ({ handleNewTodo }) {
     // Restablecer el formulario.
 		onResetForm();
 
-    // Restablecer la variable de estado isTooShort.
+    // Restablecer las variables de estado de los mensajes de error.
     setIsTooShort(false);
+    setIsEmpty(false);
     };
 
     return(
@@ -49,6 +60,12 @@ export default function TodoAdd ({ handleNewTodo }) {
           onChange={onInputChange}
           placeholder="¿Cual es tú siguiente tarea?"
           />
+
+          {/* Mensaje de error si la descripción está vacía. */}
+          {isEmpty && (
+            <p className="error-message">Por favor, escribe una tarea.</p>
+          )}
+
           {/* Mensaje de error si la tarea es demasiado corta. */}
           {isTooShort && (
             <p className="error-message">Tarea demasiado corto.</p>
