@@ -4,7 +4,7 @@
 /* Estilos del cuerpo */
 body {
   background: #e6e9f6;
-  background: linear-gradient(120deg, #360033, #0b8793);
+  /* background: linear-gradient(120deg, #360033, #0b8793); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,16 +12,16 @@ body {
 }
 
 /* Estilos de la aplicación */
-.App {
+.Tareas {
   background: #1A1A40;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 5px;
   border: 2px solid #535BF2;
 }
 
 /* Estilos del contador */
 .counter-todos {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	display: flex;
 	justify-content: space-around;
   align-items: center;
@@ -35,7 +35,7 @@ body {
 .counter-todos span {
 	color: #535BF2;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 16px;
 	/* margin-left: 10px; */
 }
 
@@ -43,7 +43,7 @@ body {
 ul {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 10px;
 }
 
 ul li {
@@ -52,7 +52,7 @@ ul li {
 	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 1px;
   cursor: pointer;
 }
@@ -91,18 +91,18 @@ li{
   border: 1px solid #8758ff;
   font-weight: 300;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   width: 100%;
   outline: none;
   background: none;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.5rem;
   margin-top: 1rem;
 }
 
 .input-check {
-  width: 2%;
-  height: 3%;
+  width: 1%;
+  height: 2%;
   position: absolute;
   opacity: 1;
 }
@@ -134,15 +134,10 @@ li{
   text-decoration-thickness: 2px;
 }
 
-/* form {
-	display: flex;
-  gap: 10px;
-} */
-
 h1 {
   color: #fff;
   margin-bottom: 0.5rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 /* Estilos para el botón */
@@ -150,7 +145,7 @@ h1 {
   background: #8758ff;
   color: #fff;
   border: none;
-  padding: 0.55rem;
+  padding: 0.4rem;
   margin-top: 1rem;
   cursor: pointer;
 }
@@ -160,7 +155,33 @@ h1 {
 }
 
 #agrega{
-  height: 25px;
-  width: 60%;
+  height: 20px;
+  width: 50%;
   margin: 20px;
 }
+
+/* header {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ height: 60px;
+ box-shadow: 1px 1px 3px 3px rgb(61, 60, 60, 0.4);
+}
+
+header .logo{
+  font-size: 30px;
+  color: #777;
+}
+
+header .display-menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.display-menu .menu{
+  padding: 0 15px;
+  text-decoration: none;
+  color: #333;
+} */
+

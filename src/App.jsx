@@ -1,54 +1,45 @@
 import './App.css';
-import React from 'react';
-import Header from './Components/Header';
-import TaskList from './Components/TaskList';
-import TodoAdd from './Components/TodoAdd';
-import useTodo from './Hooks/useTodo';
+// import { Menu } from './Routes/Menu';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Menu from './Routes/Menu';
+import { Home } from './Pages/Home';
+import SobreNosotros from './Pages/SobreNosotros';
+import Tareas from './Pages/Tareas';
+
 
 export default function App() {
-  const {
-    todos,
-    todosCount,
-    pendingTodosCount,
-    handleNewTodo,
-    handleDeleteTodo,
-    handleCompleteTodo,
-    handleUpdateTodo,
-  } = useTodo();
 
   return (
-    <div className='App'>
+    <>
+    
+  {/* Utilizamos el componente BrowserRouter como el enrutador principal que envuelve toda nuestra aplicación. */}
+  <BrowserRouter>
+  <Menu /> {/* El componente Menu representa el menú de navegación que se muestra en la parte superior de la página. */}
+  <div>
+    {/* Aquí utilizamos el componente Routes para definir las rutas y los componentes asociados que se renderizarán según la URL actual. */}
+      <Routes>
+        {/* La primera ruta está configurada para la URL raíz ("/"). 
+        Cuando el usuario accede a la página principal, 
+        se renderizará el componente <Home />. */}
+          <Route
+          path="/"
+          element={<Home />} />
 
-      {/* Encabezado */}
-       <Header />
+          {/* La siguiente ruta está configurada para la URL "/SobreNosotros". 
+          Cuando el usuario accede a esta URL, se renderizará el componente <SobreNosotros />. */}
+          <Route
+          path="SobreNosotros"
+          element={<SobreNosotros />} />
 
-       <div className='counter-todos'>
-
-        {/* Contador de todas las tareas */}
-        <h3>
-          N° Tareas: <span>{todosCount}</span>
-        </h3>
-
-        {/* Contador de tareas pendientes */}
-        <h3>
-          N° Pendientes: <span>{pendingTodosCount}</span>
-        </h3>
-       </div>
-
-       <div className='add-tarea'>
-        <h3>Agregar Tarea</h3>
-        {/* Componente para agregar una nueva tarea */}
-        <TodoAdd handleNewTodo={handleNewTodo} />
-       </div>
-
-       {/* Lista de tareas */}
-       <TaskList 
-       todos={todos}
-       handleUpdateTodo={handleUpdateTodo}
-       handleDeleteTodo={handleDeleteTodo}
-       handleCompleteTodo={handleCompleteTodo}
-       />
-    </div>
+          {/* La última ruta está configurada para la URL "/Tareas". 
+          Cuando el usuario accede a esta URL, se renderizará el componente <Tareas />. */}
+          <Route
+          path="Tareas"
+          element={<Tareas />} />
+      </Routes>
+  </div>
+  </BrowserRouter>
+  </>
   )
 }
 
