@@ -13,6 +13,7 @@ export default function Tareas() {
     handleDeleteTodo,
     handleCompleteTodo,
     handleUpdateTodo,
+    handleDeleteAllTodos,
   } = useTodo();
 
   return (
@@ -46,6 +47,7 @@ export default function Tareas() {
        handleUpdateTodo={handleUpdateTodo}
        handleDeleteTodo={handleDeleteTodo}
        handleCompleteTodo={handleCompleteTodo}
+       handleDeleteAllTodos={handleDeleteAllTodos}
        />
     </div>
   )

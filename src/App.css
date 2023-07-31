@@ -53,7 +53,7 @@ ul li {
 	align-items: center;
 	gap: 20px;
   padding: 0.2rem 0.5rem;
-  border-radius: 1px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -98,6 +98,7 @@ li{
   background: none;
   padding: 0.2rem 0.5rem;
   margin-top: 1rem;
+  border-radius: 5px;
 }
 
 .input-check {
@@ -112,6 +113,7 @@ li{
 .input-Agregar::placeholder,
 .input-Detalles::placeholder {
   color: #948e99;
+  border-radius: 5px;
 }
 
 /* Estilos del encabezado "Agregar Tarea" */

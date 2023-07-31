@@ -33,6 +33,10 @@ export const todoReducer = (initialState, action) => {
                     return todo;
                  });
 
+             // Caso para borrar todas las tareas.
+             case 'Delete All':
+             return [];
+
                  // Caso por defecto: devolver el estado inicial sin cambios.
                  default:
                     return initialState;
