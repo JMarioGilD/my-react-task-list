@@ -18,8 +18,9 @@ function SobreNosotros() {
              La aplicación de lista de tareas es una herramienta útil para ayudarte a organizar tu vida y a mantenerte al día con 
              tus pendientes. Con la aplicación, puedes crear listas de tareas, agregar tareas, editar tareas, eliminar tareas y 
              marcar tareas como completadas. La aplicación también te indica el número de tareas que tienes pendientes, y te 
-             muestra un aviso de error si intentas agregar una tarea que es demasiado corta. Además, puedes agregar una 
-             descripción a cada tarea, aunque esta no es obligatoria.
+             muestra un aviso de error si intentas agregar una tarea que es demasiado corta también hay otro mensaje de error que 
+             se muestra cuando no especificas ninguna y das click en agregar avisandote que debes escribir una tarea. Además, 
+             puedes agregar una descripción a cada tarea, aunque esta no es obligatoria.
              </Text>
              
              <Heading as="h2" size="lg" mb="4" textAlign="center">
