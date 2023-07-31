@@ -1,6 +1,4 @@
-import { Heading, Box, Text } from "@chakra-ui/react";
-
-
+import { Heading, Box, Text, Image, Flex } from "@chakra-ui/react";
 
 function SobreNosotros() {
 
@@ -12,7 +10,7 @@ function SobreNosotros() {
         
             <Box p="4">
             
-            <Heading as="h2" size="lg" mb="4">
+            <Heading as="h2" size="lg" mb="4" textAlign="center">
                 Descripción de la aplicación
             </Heading>
             
@@ -24,7 +22,7 @@ function SobreNosotros() {
              descripción a cada tarea, aunque esta no es obligatoria.
              </Text>
              
-             <Heading as="h2" size="lg" mb="4">
+             <Heading as="h2" size="lg" mb="4" textAlign="center">
                 Cómo usar la app
             </Heading>
              
@@ -34,26 +32,35 @@ function SobreNosotros() {
              número de tareas pendientes, por lo que siempre sabrás cuánto trabajo tienes por delante.
              </Text>
              
-             <Heading as="h2" size="lg" mb="4">
+             <Heading as="h2" size="lg" mb="4" textAlign="center">
                 Tecnologías usadas
             </Heading>
              
             <Text style={paragraphStyle} mb="4">
                 La aplicación de lista de tareas está creada con las siguientes tecnologías:
             </Text>
-            <Text style={paragraphStyle} mb="4">
-                HTML5
-            </Text>
-            <Text style={paragraphStyle} mb="4">
-                JavaScript
-            </Text>
-            <Text style={paragraphStyle} mb="4">
-                CSS
-            </Text>
-            <Text style={paragraphStyle} mb="4">
-                React
-            </Text>
-             </Box>
+
+            <Flex align="center" mb="4">
+               <Image src="src/Logo/html.png" alt="Logo" boxSize="25px" mr="2" />
+               <Text style={paragraphStyle} mb="4">HTML5</Text>
+            </Flex>
+            
+            <Flex align="center" mb="4">
+               <Image src="src\Logo\javascript.png" alt="Logo" boxSize="25px" mr="2" />
+               <Text style={paragraphStyle} mb="4">JavaScript</Text>
+            </Flex>
+
+            <Flex align="center" mb="4">
+               <Image src="src\Logo\stylelint.png" alt="Logo" boxSize="25px" mr="2" />
+               <Text style={paragraphStyle} mb="4">CSS</Text>
+            </Flex>
+
+            <Flex align="center" mb="4">
+               <Image src="src\Logo\react.png" alt="Logo" boxSize="25px" mr="2" />
+               <Text style={paragraphStyle} mb="4">React</Text>
+            </Flex>
+             
+        </Box>
         
     )
   }

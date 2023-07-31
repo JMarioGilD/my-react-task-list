@@ -1,16 +1,27 @@
 import './App.css';
-// import { Menu } from './Routes/Menu';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from './Routes/Menu';
 import { Home } from './Pages/Home';
 import SobreNosotros from './Pages/SobreNosotros';
 import Tareas from './Pages/Tareas';
+import { IconButton, useColorMode } from '@chakra-ui/react';
+import { FaMoon, FaSun } from "react-icons/fa";
 
 
 export default function App() {
 
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+
   return (
     <>
+     <IconButton
+     as={ isDark ? FaSun : FaMoon } 
+     boxSize={4} 
+     size={"1px"}
+     isRound={true}
+     onClick={ toggleColorMode }
+     ></IconButton>
     
   {/* Utilizamos el componente BrowserRouter como el enrutador principal que envuelve toda nuestra aplicación. */}
   <BrowserRouter>
@@ -28,13 +39,13 @@ export default function App() {
           {/* La siguiente ruta está configurada para la URL "/SobreNosotros". 
           Cuando el usuario accede a esta URL, se renderizará el componente <SobreNosotros />. */}
           <Route
-          path="SobreNosotros"
+          path="/SobreNosotros"
           element={<SobreNosotros />} />
 
           {/* La última ruta está configurada para la URL "/Tareas". 
           Cuando el usuario accede a esta URL, se renderizará el componente <Tareas />. */}
           <Route
-          path="Tareas"
+          path="/Tareas"
           element={<Tareas />} />
       </Routes>
   </div>
