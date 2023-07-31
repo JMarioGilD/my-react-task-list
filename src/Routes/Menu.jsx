@@ -12,11 +12,12 @@ export default function Menu() {
     align="center"
     justify="center"
     h="100%" 
-    pl={4}>
+    pl={4}
+    borderBottom="1px solid #ccc">
      
         {/* El elemento <nav> representa la barra de navegación que contiene una lista no ordenada (<ul>) con enlaces a diferentes rutas. */}
         <nav className="Navbar">
-        <Stack direction="row" spacing={4}>
+        <Stack direction="row" spacing={8}>
                       {/* El componente <NavLink> es un enlace que dirige a la ruta especificada en el atributo "to". 
                       Aquí, el enlace con la clase "menu-link" dirige a la ruta de la página de inicio ("/"). */}
                       <Heading size="xs">
