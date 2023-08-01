@@ -4,7 +4,7 @@ import Menu from './Routes/Menu';
 import { Home } from './Pages/Home';
 import SobreNosotros from './Pages/SobreNosotros';
 import Tareas from './Pages/Tareas';
-import { IconButton, useColorMode } from '@chakra-ui/react';
+import { IconButton, useColorMode, Center } from '@chakra-ui/react';
 import { FaMoon, FaSun } from "react-icons/fa";
 
 
@@ -15,6 +15,9 @@ export default function App() {
 
   return (
     <>
+
+     {/* Utilizamos el componente Center para centrar el botón */}
+     <Center mt="10px">
      <IconButton
      as={ isDark ? FaSun : FaMoon } 
      boxSize={4} 
@@ -22,6 +25,7 @@ export default function App() {
      isRound={true}
      onClick={ toggleColorMode }
      ></IconButton>
+     </Center>
     
   {/* Utilizamos el componente BrowserRouter como el enrutador principal que envuelve toda nuestra aplicación. */}
   <BrowserRouter>
