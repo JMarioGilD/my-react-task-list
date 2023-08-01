@@ -58,10 +58,6 @@ export default function TodoAdd({ handleNewTodo }) {
         name="description"
         value={description}
         onChange={onInputChange}
-        onBlur={() => {
-          setIsEmpty(description.trim().length === 0);
-          setIsTooShort(description.length < 3);
-        }}
         placeholder="¿Cuál es tu siguiente tarea?"
       />
       {/* Mensaje de error si la descripción está vacía. */}
