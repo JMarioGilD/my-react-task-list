@@ -1,13 +1,14 @@
-import { Box, Heading, Image } from "@chakra-ui/react"
-import React from "react"
-
-export function Home() {
-    return ( 
-      <Box p="4" textAlign="center">
-          <Heading as="h2" size="lg" mb="4">
-            ¡Bienvenido!
-          </Heading>
-          <Image src="src\Logo\jgagenda-logo.png" alt="Logo" mb="4" maxW="800px" mx="auto" />
-      </Box>
-    )
+function Home() {
+  return (
+    <div className="home-container">
+     <header className="glass-header">
+     <h2 className="home-title">
+        ¡Bienvenido a JGAgenda, donde puedes hacer más en menos tiempo!
+      </h2>
+     </header>
+     
+    </div>
+  );
 }
+
+export default Home;

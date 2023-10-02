@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './../Components/Header';
 import TaskList from './../Components/TaskList';
 import TodoAdd from './../Components/TodoAdd';
 import useTodo from './../Hooks/useTodo';
+import { Box, Heading, Flex, Divider } from "@chakra-ui/react";
 
 export default function Tareas() {
   const {
@@ -13,42 +13,39 @@ export default function Tareas() {
     handleDeleteTodo,
     handleCompleteTodo,
     handleUpdateTodo,
-    handleDeleteAllTodos,
   } = useTodo();
 
   return (
-    <div className='Tareas'>
-
+    <Box p={4}>
       {/* Encabezado */}
-       <Header />
+     
 
-       <div className='counter-todos'>
-
+      <Flex justifyContent="space-between"  mb={4}>
         {/* Contador de todas las tareas */}
-        <h3>
-          N° Tareas: <span>{todosCount}</span>
-        </h3>
+        <Box>
+          <Heading size="md" mb={2}>
+            N° Tareas: <span>{todosCount}</span>
+          </Heading>
 
-        {/* Contador de tareas pendientes */}
-        <h3>
-          N° Pendientes: <span>{pendingTodosCount}</span>
-        </h3>
-       </div>
+          {/* Contador de tareas pendientes */}
+          <Heading size="md">
+            N° Pendientes: <span>{pendingTodosCount}</span>
+          </Heading>
+        </Box>
 
-       <div className='add-tarea'>
-        <h3>Agregar Tarea</h3>
         {/* Componente para agregar una nueva tarea */}
         <TodoAdd handleNewTodo={handleNewTodo} />
-       </div>
+      </Flex>
 
-       {/* Lista de tareas */}
-       <TaskList 
-       todos={todos}
-       handleUpdateTodo={handleUpdateTodo}
-       handleDeleteTodo={handleDeleteTodo}
-       handleCompleteTodo={handleCompleteTodo}
-       handleDeleteAllTodos={handleDeleteAllTodos}
-       />
-    </div>
-  )
+      <Divider mb={4} />
+
+      {/* Lista de tareas */}
+      <TaskList 
+        todos={todos}
+        handleUpdateTodo={handleUpdateTodo}
+        handleDeleteTodo={handleDeleteTodo}
+        handleCompleteTodo={handleCompleteTodo}
+      />
+    </Box>
+  );
 }

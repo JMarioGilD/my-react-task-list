@@ -1,67 +1,82 @@
 import React, { useRef, useState } from "react";
 import useForm from "../Hooks/useForm";
+import { DeleteIcon } from "@chakra-ui/icons";
+import { Button, IconButton } from "@chakra-ui/react";
 
-export default function Task({ todo, handleUpdateTodo }) {
-   
-  // Estado y funciones para manejar los campos de actualización de la tarea
+export default function Task({
+   todo,
+   handleUpdateTodo,
+   handleDeleteTodo,
+   handleCompleteTodo,
+}) {
    const { updateDescription, updateDescriptionTask, onInputChange } = useForm({
       updateDescription: todo.description,
       updateDescriptionTask: todo.descriptionTask,
    });
 
-   // Estado para habilitar o deshabilitar la edición de la tarea.
    const [disabled, setDisabled] = useState(true);
-
-   // Referencia al input para enfocarlo.
    const focusInputRef = useRef();
 
-   // Función para manejar la actualización de la tarea.
+   const handleEditTask = () => {
+      if (disabled) {
+      setDisabled(false);
+      focusInputRef.current.focus();
+      } else {
+      onSubmitUpdate();
+      }
+   };
+
    const onSubmitUpdate = (event) => {
       event.preventDefault();
-
       const id = todo.id;
       const description = updateDescription;
       const descriptionTask = updateDescriptionTask;
 
       handleUpdateTodo(id, description, descriptionTask);
 
-      setDisabled(!disabled);
+      setDisabled(true);
+      focusInputRef.current.blur();
+      };
 
-      focusInputRef.current.focus();
-
+      const onDeleteTask = () => {
+      handleDeleteTodo(todo.id);
    };
-   
-      return ( 
+
+   return (
       <form onSubmit={onSubmitUpdate}>
-      {/* Campo de entrada para la descripción de la tarea. */}
       <input
-				type="text"
-				className={`input-update ${
-					todo.done ? 'text-decoration-dashed' : ''
-				}`}
-				name='updateDescription'
-				value={updateDescription}
-				onChange={onInputChange}
-				placeholder='Corregir tarea'
-				readOnly={disabled}
-				ref={focusInputRef}
-		/>
-
-      {/* Campo de entrada para los detalles de la tarea. */}
-      <input 
-            type="text"
-            className="input-updatedescription"
-            name='updateDescriptionTask'
-            value={updateDescriptionTask}
-            onChange={onInputChange}
-            placeholder='Corregir detalles'
-            readOnly={disabled}
-            ref={focusInputRef}
+         type="text"
+         className={`input-update ${todo.done ? "text-decoration-dashed" : ""}`}
+         name="updateDescription"
+         value={updateDescription}
+         onChange={onInputChange}
+         placeholder="Corregir tarea"
+         readOnly={disabled}
+         ref={focusInputRef}
       />
-            {/* Botón para enviar la actualización. */}
-            <button className="boton" type='submit'>
-               <i className="fas fa-edit"></i>
-            </button> 
-    </form>
-    );
-   };
+
+      <input
+         type="text"
+         className="input-updatedescription"
+         name="updateDescriptionTask"
+         value={updateDescriptionTask}
+         onChange={onInputChange}
+         placeholder="Corregir detalles"
+         readOnly={disabled}
+         ref={focusInputRef}
+      />
+
+      <Button className="boton" type="button" onClick={handleEditTask}>
+         {disabled ? <i className="fas fa-edit"></i> : "Guardar"}
+      </Button>
+
+      {/* Botón para eliminar la tarea */}
+      <IconButton
+         icon={<DeleteIcon />}
+         onClick={onDeleteTask}
+         colorScheme="red"
+         aria-label="Eliminar tarea"
+      />
+      </form>
+   );
+};

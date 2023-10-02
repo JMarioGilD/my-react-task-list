@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useForm from '../Hooks/useForm';
+import { Input, Button, Text } from '@chakra-ui/react';
 
 export default function TodoAdd({ handleNewTodo }) {
   // Estado local y funciones del formulario.
@@ -8,9 +9,6 @@ export default function TodoAdd({ handleNewTodo }) {
     descriptionTask: '',
   });
 
-  // Estado local para controlar si la descripción está vacía.
-  const [isEmpty, setIsEmpty] = useState(false);
-
   // Estado local para controlar si la tarea es demasiado corta.
   const [isTooShort, setIsTooShort] = useState(false);
 
@@ -18,15 +16,8 @@ export default function TodoAdd({ handleNewTodo }) {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    if (description.trim().length === 0) {
-      setIsEmpty(true);
-      setIsTooShort(false); // Resetear el otro mensaje de error si estaba activo.
-      return;
-    }
-
     if (description.length < 3) {
       setIsTooShort(true);
-      setIsEmpty(false); // Resetear el otro mensaje de error si estaba activo.
       return;
     }
 
@@ -38,48 +29,52 @@ export default function TodoAdd({ handleNewTodo }) {
       done: false,
     };
 
-    // Llamar a la función handleNewTodo pasando la nueva tarea.
+    // Llamar a la fuunción handleNewTodo pasando la nueva tarea.
     handleNewTodo(newTodo);
 
     // Restablecer el formulario.
     onResetForm();
 
-    // Restablecer las variables de estado de los mensajes de error.
+    // Restablecer la variable de estado isTooShort.
     setIsTooShort(false);
-    setIsEmpty(false);
   };
 
   return (
     <form onSubmit={onFormSubmit}>
       {/* Campo de entrada para la descripción de la tarea. */}
-      <input
+      <Input
         type="text"
-        className="input-Agregar"
         name="description"
         value={description}
         onChange={onInputChange}
         placeholder="¿Cuál es tu siguiente tarea?"
+        mb={2} // Márgenes inferiores
+        borderColor="green.500" 
+        borderRadius="md" 
       />
-      {/* Mensaje de error si la descripción está vacía. */}
-      {isEmpty && <p className="error-message">Por favor, escribe una tarea.</p>}
-
       {/* Mensaje de error si la tarea es demasiado corta. */}
-      {isTooShort && <p className="error-message">Tarea demasiado corto.</p>}
+      {isTooShort && (
+        <Text color="red.500" mb={2}>
+          Tarea demasiado corta.
+        </Text>
+      )}
 
       {/* Campo de entrada para los detalles de la tarea. */}
-      <input
+      <Input
         type="text"
-        className="input-Detalles"
         name="descriptionTask"
         value={descriptionTask}
         onChange={onInputChange}
         placeholder="Indica los detalles de tu tarea"
+        mb={2} // Márgenes inferiores
+        borderColor="green.500" // Color del borde verde
+        borderRadius="md" // Bordes redondeados
       />
 
       {/* Botón para agregar la tarea. */}
-      <button className="boton" type="submit">
+      <Button type="submit" colorScheme="green" mb={2}>
         <i className="fas fa-plus"></i>
-      </button>
+      </Button>
     </form>
   );
 }
