@@ -1,42 +1,187 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Estilos del cuerpo */
+body {
+  background: #e6e9f6;
+  /* background: linear-gradient(120deg, #360033, #0b8793); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Estilos de la aplicación */
+.Tareas {
+  background: #1A1A40;
   padding: 2rem;
-  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #535BF2;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Estilos del contador */
+.counter-todos {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-around;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.counter-todos h3 {
+  color: #fff;
+	font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.counter-todos span {
+	color: #535BF2;
+	font-weight: 700;
+	font-size: 16px;
+	/* margin-left: 10px; */
 }
 
-.card {
-  padding: 2em;
+/* Estilos de lista de tareas */
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+ul li {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1px;
+  cursor: pointer;
+  width: 80%;
 }
+
+ul li span {
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+ul li form {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Estilos del elemento de la lista de tareas */
+li{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #8758ff;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 1px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* Estilos de los campos de entrada */
+.input-update,
+.input-updatedescription,
+.input-Agregar,
+.input-Detalles {
+  border: 1px solid #8758ff;
+  font-weight: 300;
+  font-family: inherit;
+  font-size: 14px;
+  color: #fff;
+  width: 80%;
+  outline: none;
+  background: none;
+  padding: 0.2rem 0.5rem;
+  margin-top: 1rem;
+}
+
+.input-check {
+  width: 1%;
+  height: 2%;
+  position: absolute;
+  opacity: 1;
+}
+
+.input-update::placeholder,
+.input-updatedescription::placeholder,
+.input-Agregar::placeholder,
+.input-Detalles::placeholder {
+  color: #948e99;
+}
+
+/* Estilos del encabezado "Agregar Tarea" */
+.add-tarea h3 {
+  color: #fff;
+	font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos del mensaje de error */
+.error-message{
+  color: #673ab7;
+  margin-top: 0.5rem;
+}
+
+.text-decoration-dashed {
+	text-decoration: line-through;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Estilos para el botón */
+.boton {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.4rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.boton:hover{
+  background-color: #535BF2;
+}
+
+#agrega{
+  height: 20px;
+  width: 50%;
+  margin: 20px;
+}
+
+/* header {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ height: 60px;
+ box-shadow: 1px 1px 3px 3px rgb(61, 60, 60, 0.4);
+}
+
+header .logo{
+  font-size: 30px;
+  color: #777;
+}
+
+header .display-menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.display-menu .menu{
+  padding: 0 15px;
+  text-decoration: none;
+  color: #333;
+} */
